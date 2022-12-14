@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>historial</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-menu side="start"  menuId="first" contentId="main">
+
+    <ion-content>
+      <div class="menu-header-bg"></div>
+        <div class="header-content">
+          <img src="https://www.motorpoint.com/fotos/8/toreto1_thumb_730.jpg" alt="">
+          <ion-label>
+            <h2>{{ usuario }}</h2>
+            <p></p>
+          </ion-label>
+        </div>
+
+      <ion-list class="menu-items" lines="none">
+
+
+        <ion-item (click)="perfil()">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-label>Perfil</ion-label>
+        </ion-item>
+        <ion-item (click)="presentAlert()">
+          <ion-icon name="id-card-outline"></ion-icon>
+          <ion-label>Agregar viaje</ion-label>
+          </ion-item>
+        <ion-item (click)="viajes()">
+          <ion-icon name="car-sport-outline"></ion-icon>
+          <ion-label>Viajes disponibles</ion-label>
+          </ion-item>
+
+        <ion-item (click)="info()">
+          <ion-icon name="information-circle-outline"></ion-icon>
+          <ion-label>Quienes somos</ion-label>
+          </ion-item>
+        <ion-item (click)="cerrar()">
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
+          <ion-label>Cerrar sesion</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main"></ion-router-outlet>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Detalle Del Viaje</ion-card-title>
+        <ion-card-subtitle>Fecha: 05/08/2022</ion-card-subtitle>
+        <ion-card-subtitle>Inicio: 16:30 pm <br> Llegada: 17:02</ion-card-subtitle>
+
+      </ion-card-header>
+      <img src="https://krify.co/wp-content/uploads/2018/09/Navigation.gif" alt="">
+      <ion-card-content>
+        Vehiculo: raio makuin
+        <br>
+        Chofer: Diosa Aqua
+        <br>
+        Calificacion: 4.7/5
+        <br>
+        <img src="https://www.edelices.com/skin/frontend/rwd/rwd18/images/media/home/edelices-avis-note.jpg" alt="">
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Detalle Del Viaje</ion-card-title>
+        <ion-card-subtitle>Fecha: 10/08/2022</ion-card-subtitle>
+        <ion-card-subtitle>Inicio: 13:30 pm <br> Llegada: 14:00</ion-card-subtitle>
+
+      </ion-card-header>
+      <img src="https://krify.co/wp-content/uploads/2018/09/Navigation.gif" alt="">
+      <ion-card-content>
+        Vehiculo: Ford Figo
+        <br>
+        Chofer: Black Kokun
+        <br>
+        Calificacion: 4.7/5
+        <br>
+        <img src="https://www.edelices.com/skin/frontend/rwd/rwd18/images/media/home/edelices-avis-note.jpg" alt="">
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Detalle Del Viaje</ion-card-title>
+        <ion-card-subtitle>Fecha: 15/08/2022</ion-card-subtitle>
+        <ion-card-subtitle>Inicio: 09:30 pm <br> Llegada: 10:00</ion-card-subtitle>
+
+      </ion-card-header>
+      <img src="https://krify.co/wp-content/uploads/2018/09/Navigation.gif" alt="">
+      <ion-card-content>
+        Vehiculo: toyota prius
+        <br>
+        Chofer: Nami
+        <br>
+        Calificacion: 4.7/5
+        <br>
+        <img src="https://www.edelices.com/skin/frontend/rwd/rwd18/images/media/home/edelices-avis-note.jpg" alt="">
+      </ion-card-content>
+    </ion-card>
+
+
+
+
+</ion-content>

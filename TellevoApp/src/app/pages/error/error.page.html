@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Error</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-menu side="start"  menuId="first" contentId="main">
+    
+    <ion-content>
+      <div class="menu-header-bg"></div>
+        <div class="header-content">
+          <img src="https://i.pinimg.com/280x280_RS/2e/45/66/2e4566fd829bcf9eb11ccdb5f252b02f.jpg" alt="">
+          <ion-label>
+            <h2>Invitado</h2>
+            <p>Logueate o registrate para acceder al resto del contenido</p>
+          </ion-label>
+        </div>
+
+      <ion-list class="menu-items" lines="none">
+        
+  
+        <ion-item (click)="fail()">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-label>Perfil</ion-label>  
+        </ion-item>
+        <ion-item (click)="info()">
+          <ion-icon name="information-circle-outline"></ion-icon>
+          <ion-label>Quienes somos</ion-label>
+          </ion-item>
+        <ion-item (click)="login()">
+          <ion-icon name="log-in-outline" slot="start"></ion-icon>
+          <ion-label>Iniciar sesion</ion-label>
+        </ion-item>
+        <ion-item (click)="registro()">
+          <ion-icon name="person-add-outline"></ion-icon>
+          <ion-label>Registro</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main"></ion-router-outlet>
+
+    <ion-card>
+      
+    
+      <ion-card-content>
+        <img src="https://img.freepik.com/vector-gratis/ups-error-404-ilustracion-concepto-robot-roto_114360-5529.jpg?w=2000" alt="">
+
+      </ion-card-content>
+    </ion-card>
+</ion-content>

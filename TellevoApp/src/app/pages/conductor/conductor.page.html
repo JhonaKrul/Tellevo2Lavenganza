@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>conductor</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-menu side="start"  menuId="first" contentId="main">
+
+    <ion-content>
+      <div class="menu-header-bg"></div>
+        <div class="header-content">
+          <img src="https://www.motorpoint.com/fotos/8/toreto1_thumb_730.jpg" alt="">
+          <ion-label>
+            <h2>{{ usuario }}</h2>
+            <p></p>
+          </ion-label>
+        </div>
+
+      <ion-list class="menu-items" lines="none">
+
+
+        <ion-item (click)="perfil()">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-label>Perfil</ion-label>
+        </ion-item>
+        <ion-item (click)="presentAlert()">
+          <ion-icon name="id-card-outline"></ion-icon>
+          <ion-label>Agregar viaje</ion-label>
+          </ion-item>
+        <ion-item (click)="Viajes()">
+          <ion-icon name="car-sport-outline"></ion-icon>
+          <ion-label>Viajes disponibles</ion-label>
+          </ion-item>
+        <ion-item (click)="info()">
+          <ion-icon name="information-circle-outline"></ion-icon>
+          <ion-label>Quienes somos</ion-label>
+          </ion-item>
+        <ion-item (click)="cerrar()">
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
+          <ion-label>Cerrar sesion</ion-label>
+        </ion-item>
+        <ion-item (click)="api()">
+          <ion-icon name="radio-outline"></ion-icon>
+          <ion-label>API</ion-label>
+          </ion-item>
+      </ion-list>
+    </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main"></ion-router-outlet>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Registro</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+
+          <ion-item>
+            <ion-label position="floating">Conductor:</ion-label>
+            <ion-input #txtConductor ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Lugar de origen:</ion-label>
+            <ion-input #txtOrigen ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Lugar de destino:</ion-label>
+            <ion-input #txtDestino ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Vehiculo:</ion-label>
+            <ion-input #txtVehiculo ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Patente:</ion-label>
+            <ion-input #txtPatente ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Pasajeros:</ion-label>
+            <ion-input #txtPasajeros ></ion-input>
+          </ion-item>
+
+          <br>
+          <ion-button (click)="presentAlert()">
+          Agregar viaje
+        </ion-button>
+
+      </ion-card-content>
+
+    </ion-card>
+
+</ion-content>

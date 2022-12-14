@@ -1,0 +1,14 @@
+ion-content{
+    --background: black;
+}
+
+ @-webkit-keyframes slide-left{0%{-webkit-transform:translateX(0);transform:translateX(0)}100%{-webkit-transform:translateX(-100px);transform:translateX(-100px)}}@keyframes slide-left{0%{-webkit-transform:translateX(0);transform:translateX(0)}100%{-webkit-transform:translateX(-100px);transform:translateX(-100px)}}
+.logo{
+    -webkit-animation:slide-left .5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-left .5s cubic-bezier(.25,.46,.45,.94) both;
+    img {
+        margin-top: 50%;
+        padding: 10px;
+        margin-bottom: 50%;
+        margin-left: 40%;
+    }
+}
