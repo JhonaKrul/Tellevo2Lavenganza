@@ -181,10 +181,21 @@ export class ViajesPage implements OnInit {
 
     await alert.present();
 
-
-
-
-
  }
+
+viaju(){
+    console.log("papure")
+    this.router.navigate(['/viajes'])
+  };
+
+mapas(){
+    console.log("papure")
+    this.router.navigate(['mapa'])
+  };
+
+perfile(){
+    console.log("papure")
+    this.router.navigate(['perfiles'])
+  };
 
 }

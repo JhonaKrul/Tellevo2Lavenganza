@@ -1,5 +1,5 @@
 ///<reference path="../../../../node_modules/@types/googlemaps/index.d.ts"/>
-
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms'
 import { ElementRef, ViewChild, Renderer2 } from '@angular/core'
@@ -19,7 +19,7 @@ export class MapaPage {
   distancia!: string;
   formMapas!: FormGroup;
 
-  constructor(private renderer: Renderer2) 
+  constructor(private renderer: Renderer2, private router: Router, private miau: Router, private lol: Router) 
   { 
     this.markers = [];
 
@@ -35,6 +35,40 @@ export class MapaPage {
   }
 
   ngOnInit(): void {
+  }
+
+  viaju(){
+    console.log("papure")
+    this.router.navigate(['viajes'])
+  }
+
+  mapas(){
+    console.log("miau")
+    this.miau.navigate(['mapa'])
+  }
+
+  perfile(){
+    console.log("ola")
+    this.lol.navigate(['perfiles'])
+  }
+
+  descarga(){
+    console.log("nodigasesopapu:'v")
+    this.lol.navigate(['descarga'])
+  }
+
+  api(){
+    console.log("api")
+    this.router.navigate(['api'])
+  }
+
+  info(){
+    console.log("info")
+    this.router.navigate(['info'])
+  }
+
+  cerrar(){
+    this.router.navigate(['home'])
   }
 
   ngAfterViewInit(): void {
@@ -69,7 +103,7 @@ export class MapaPage {
 
 
   //calcular ruta
-  mapRuta() {
+mapRuta() {
 
     const directionService = new google.maps.DirectionsService();
     const directionRender = new google.maps.DirectionsRenderer();
@@ -78,7 +112,7 @@ export class MapaPage {
 
     directionService.route({
 
-      origin: 'San José 1114-1118, Puente Alto, Región Metropolitana',
+      origin: this.formMapas.controls,
       destination: 'Av. Concha y Toro 1314, 8150215 Puente Alto, Región Metropolitana',
       travelMode: google.maps.TravelMode.DRIVING
 
@@ -173,7 +207,7 @@ export class MapaPage {
 
     const markerPosition = new google.maps.Marker({
       position: this.mapa.getCenter(),
-      title: "David",
+      title: "Jhonyuwu",
     });
 
     markerPosition.setMap(this.mapa);
