@@ -103,7 +103,7 @@ export class MapaPage {
 
 
   //calcular ruta
-mapRuta() {
+mapRuta(direccionForm) {
 
     const directionService = new google.maps.DirectionsService();
     const directionRender = new google.maps.DirectionsRenderer();
@@ -112,7 +112,7 @@ mapRuta() {
 
     directionService.route({
 
-      origin: this.formMapas.controls,
+      origin: 'San José 1151-1121, Puente Alto, Región Metropolitana',
       destination: 'Av. Concha y Toro 1314, 8150215 Puente Alto, Región Metropolitana',
       travelMode: google.maps.TravelMode.DRIVING
 
@@ -140,15 +140,16 @@ mapRuta() {
 
 
     google.maps.event.addListener(autocomplete, 'place_changed', () => {
-
+      
       const place: any = autocomplete.getPlace();
       console.log("el place completo es:", place)
 
       this.mapa.setCenter(place.geometry.location);
       const marker = new google.maps.Marker({
         position: place.geometry.location
+      
       });
-
+      let lat= place.geometry.location.lat(); let lng=place.geometry.location.lng()
       marker.setMap(this.mapa);
       this.llenarFormulario(place);
     })

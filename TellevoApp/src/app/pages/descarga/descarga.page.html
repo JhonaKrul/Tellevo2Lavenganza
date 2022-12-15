@@ -4,15 +4,69 @@
       <ion-buttons slot="start">
           <ion-menu-button autoHide="false"></ion-menu-button>
       </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-back-button></ion-back-button>
+        </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
+<!-- Aqui empieza el Menu -->
+<ion-content>
+  <ion-menu side="start"  menuId="first" contentId="main">
+
+    <ion-content> 
+      <div class="menu-header-bg"></div>
+        <div class="header-content">
+          <img src="https://www.motorpoint.com/fotos/8/toreto1_thumb_730.jpg" alt="">
+          <ion-label>
+            <h2>{{ usuario }}</h2>
+            <p></p>
+          </ion-label>
+        </div>
+
+      <ion-list class="menu-items" lines="none">
+
+
+        <ion-item (click)="perfile()">
+          <ion-icon name="person-circle-outline"></ion-icon>
+          <ion-label>Perfil</ion-label>
+        </ion-item>
+        <ion-item (click)="mapas()">
+          <ion-icon name="map-outline"></ion-icon>
+          <ion-label>Mapa</ion-label>
+        </ion-item>
+        <ion-item (click)="viaju()">
+          <ion-icon name="time-outline"></ion-icon>
+          <ion-label>Historial</ion-label>
+        </ion-item>
+        <ion-item (click)="info()">
+          <ion-icon name="information-circle-outline"></ion-icon>
+          <ion-label>Quienes somos</ion-label>
+          </ion-item>
+        <ion-item (click)="cerrar()">
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
+          <ion-label>Cerrar sesion</ion-label>
+        </ion-item>
+        <ion-item (click)="api()">
+          <ion-icon name="radio-outline"></ion-icon>
+          <ion-label>API</ion-label>
+        </ion-item>
+        <ion-item (click)="descarga()">
+          <ion-icon name="cloud-download-outline"></ion-icon>
+          <ion-label>Descarga</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+    </ion-menu>
+    
+    <ion-router-outlet id="main"></ion-router-outlet>
 
 <ion-content>
   <ion-card>
     <img alt="Silhouette of mountains" src="https://st1.uvnimg.com/dims4/default/a5b8e65/2147483647/thumbnail/1024x576%3E/quality/75/?url=https%3A%2F%2Fuvn-brightspot.s3.amazonaws.com%2Fassets%2Fvixes%2Fbtg%2Ftech.batanga.com%2Ffiles%2FComo-crear-una-carpeta-compartida-en-MediaFire-1.jpg" />
     <ion-card-header>
       <ion-card-title>Link De Descarga</ion-card-title>
-      <ion-card-subtitle>APK TellevoApp - 10MB aprox.</ion-card-subtitle>
+      <ion-card-subtitle>APK TellevoApp.</ion-card-subtitle>
       <ion-button download="testFile" target="_self" href="https://www.mediafire.com/file/7mj75mxza7xtayd/APK+QR.apk/file">Descargar APP!</ion-button>
     </ion-card-header>
   
@@ -25,6 +79,5 @@
 
 <ion-footer >
   <ion-toolbar color="warning" >
-    <ion-title>Footer</ion-title>
   </ion-toolbar>
 </ion-footer>
