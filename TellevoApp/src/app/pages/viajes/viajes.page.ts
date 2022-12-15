@@ -18,7 +18,7 @@ export class ViajesPage implements OnInit {
   usuario : any
 
 
-  constructor(private router: Router, private fire: FirebaseService, private servicio: ViajesService, private alerta: AlertController) { }
+  constructor(private router: Router, private miau: Router, private lol: Router, private fire: FirebaseService, private servicio: ViajesService, private alerta: AlertController) { }
 
   ngOnInit() {
     this.validacion()
@@ -59,36 +59,7 @@ export class ViajesPage implements OnInit {
     )
   }
 
- 
 
-  cerrar() {
-    this.router.navigate(['home'])
-  }
-
-  info(){
-    console.log("info")
-    this.router.navigate(['info'])
-  }
-
-  perfil(){
-    console.log("perfil")
-    this.router.navigate(['perfiles'])
-  }
-
-  api(){
-    console.log("api")
-    this.router.navigate(['api'])
-  }
-
-  conductor(){
-    console.log("conductor")
-    this.router.navigate(['conductor'])
-  }
-
-  Viajes(){
-    console.log("viajes")
-    this.router.navigate(['viajes'])
-  }
 
   async presentAlert() {
     const alert = await this.alerta.create({
@@ -183,19 +154,42 @@ export class ViajesPage implements OnInit {
 
  }
 
-viaju(){
-    console.log("papure")
-    this.router.navigate(['/viajes'])
-  };
+ viaju(){
+  console.log("papure")
+  this.router.navigate(['viajes'])
+}
 
 mapas(){
-    console.log("papure")
-    this.router.navigate(['mapa'])
-  };
+  console.log("miau")
+  this.miau.navigate(['mapa'])
+}
 
 perfile(){
-    console.log("papure")
-    this.router.navigate(['perfiles'])
-  };
+  console.log("ola")
+  this.lol.navigate(['perfiles'])
+}
 
+descarga(){
+  console.log("nodigasesopapu:'v")
+  this.lol.navigate(['descarga'])
+}
+
+api(){
+  console.log("api")
+  this.router.navigate(['api'])
+}
+
+info(){
+  console.log("info")
+  this.router.navigate(['info'])
+}
+
+cuerre(){
+  console.log("uwu")
+  this.router.navigate(['qr'])
+}
+
+cerrar(){
+  this.router.navigate(['home'])
+}
 }

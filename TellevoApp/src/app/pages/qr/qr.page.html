@@ -1,12 +1,12 @@
 <ion-header>
   <ion-toolbar color="primary">
-      <ion-title>Descargar app</ion-title>
-      <ion-buttons slot="start">
-          <ion-menu-button autoHide="false"></ion-menu-button>
+    <ion-title>QR</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button></ion-back-button>
       </ion-buttons>
-      <ion-buttons slot="end">
-        <ion-back-button></ion-back-button>
-        </ion-buttons>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -65,20 +65,23 @@
     
     <ion-router-outlet id="main"></ion-router-outlet>
 
-<ion-content>
-  <ion-card>
-    <img alt="Silhouette of mountains" src="https://st1.uvnimg.com/dims4/default/a5b8e65/2147483647/thumbnail/1024x576%3E/quality/75/?url=https%3A%2F%2Fuvn-brightspot.s3.amazonaws.com%2Fassets%2Fvixes%2Fbtg%2Ftech.batanga.com%2Ffiles%2FComo-crear-una-carpeta-compartida-en-MediaFire-1.jpg" />
-    <ion-card-header>
-      <ion-card-title>Link De Descarga</ion-card-title>
-      <ion-card-subtitle>APK TellevoApp.</ion-card-subtitle>
-      <ion-button download="testFile" target="_self" href="https://www.mediafire.com/file/7mj75mxza7xtayd/APK+QR.apk/file">Descargar APP!</ion-button>
-    </ion-card-header>
-  
-    <ion-card-content>
-      TeLlevoAPP es una aplicación que puedes descargar en cualquier teléfono.
-      A través de ella, un Conductor, que se encuentre cerca de ti, acepta tu solicitud de viaje y te lleva a donde quieras ir, de forma fácil, cómoda y segura.
-    </ion-card-content>
-  </ion-card>
+
+<ion-content [style.visibility]="content_visibility">
+
+  <ion-button 
+    expand="block"
+    class="ion-margin"
+    (click)="startScan()">
+    Escanear codigo QR
+  </ion-button>
+
+    <ion-item *ngIf="scannedResult">
+
+      <ion-label class="ion-text-wrap">
+        Resultado: {{ scannedResult }}
+      </ion-label>
+
+    </ion-item>
 </ion-content>
 
 <ion-footer >

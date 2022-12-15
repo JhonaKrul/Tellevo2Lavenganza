@@ -6,7 +6,7 @@ import * as firebase from 'firebase/compat';
 import { Cliente } from 'src/app/services/cliente';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { HomeService } from 'src/app/services/home.service';
-
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -17,17 +17,22 @@ import { HomeService } from 'src/app/services/home.service';
 export class LoginPage implements OnInit{ 
 
 
- 
+  langs: string[] = [];
   user = null;
   mensaje: string
 
-  constructor(private fire: FirebaseService ,private servicio: HomeService, private router: Router, private route: ActivatedRoute,  private alerta: AlertController, private auth: AngularFireAuth ) { 
-    
- this.auth.authState.subscribe((user) =>{
-  this.user = user? user: null;
+  constructor(private translateService: TranslateService, private fire: FirebaseService ,private servicio: HomeService, private router: Router, private route: ActivatedRoute,  private alerta: AlertController, private auth: AngularFireAuth ) { 
+    this.langs = this.translateService.getLangs();
+    this.auth.authState.subscribe((user) =>{
+    this.user = user? user: null;
  });
    
 
+  }
+  
+  changeLang(event) {
+    this.translateService.use(event.detail.value);
+    console.log(event.detail.value)
   }
 
   ngOnInit() {

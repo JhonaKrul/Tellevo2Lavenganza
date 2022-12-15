@@ -60,6 +60,10 @@ const routes: Routes = [
     path: 'descarga',
     loadChildren: () => import('./pages/descarga/descarga.module').then( m => m.DescargaPageModule)
   },
+  {
+    path: 'qr',
+    loadChildren: () => import('./pages/qr/qr.module').then( m => m.QrPageModule)
+  },
 ];
 
 @NgModule({

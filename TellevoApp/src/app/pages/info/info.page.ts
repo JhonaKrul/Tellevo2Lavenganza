@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class InfoPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private miau: Router, private lol: Router) { }
 
   ngOnInit() {
   }
@@ -31,10 +31,43 @@ export class InfoPage implements OnInit {
     console.log("info")
     this.router.navigate(['info'])
   }
-
+  
   fail(){
     console.log("error")
     this.router.navigate(['error'])
   }
 
+  viaju(){
+    console.log("papure")
+    this.router.navigate(['viajes'])
+  }
+
+  mapas(){
+    console.log("miau")
+    this.miau.navigate(['mapa'])
+  }
+
+  perfile(){
+    console.log("ola")
+    this.lol.navigate(['perfiles'])
+  }
+
+  descarga(){
+    console.log("nodigasesopapu:'v")
+    this.lol.navigate(['descarga'])
+  }
+
+  api(){
+    console.log("api")
+    this.router.navigate(['api'])
+  }
+
+  cuerre(){
+    console.log("uwu")
+    this.router.navigate(['qr'])
+  }
+
+  cerrar(){
+    this.router.navigate(['home'])
+  }
 }

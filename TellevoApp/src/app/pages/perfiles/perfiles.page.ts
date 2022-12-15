@@ -17,7 +17,7 @@ export class PerfilesPage implements OnInit {
   viajes = []
   titulo = "Viajes"
 
-  constructor(private router: Router, private servicio: ViajesService, private alerta: AlertController, private fire: FirebaseService) { }
+  constructor(private router: Router, private miau: Router, private lol: Router, private servicio: ViajesService, private alerta: AlertController, private fire: FirebaseService) { }
 
   ngOnInit() {
   }
@@ -26,9 +26,24 @@ export class PerfilesPage implements OnInit {
     
   }
 
-  cerrar(){
-    this.fire.logout();
-    this.router.navigate(['home'])
+  viaju(){
+    console.log("papure")
+    this.router.navigate(['viajes'])
+  }
+
+  mapas(){
+    console.log("miau")
+    this.miau.navigate(['mapa'])
+  }
+
+  perfile(){
+    console.log("ola")
+    this.lol.navigate(['perfiles'])
+  }
+
+  descarga(){
+    console.log("nodigasesopapu:'v")
+    this.lol.navigate(['descarga'])
   }
 
   api(){
@@ -41,21 +56,14 @@ export class PerfilesPage implements OnInit {
     this.router.navigate(['info'])
   }
 
-  perfil(){
-    console.log("perfil")
-    this.router.navigate(['perfiles'])
+  cuerre(){
+    console.log("uwu")
+    this.router.navigate(['qr'])
   }
 
-  conductor(){
-    console.log("conductor")
-    this.router.navigate(['conductor'])
+  cerrar(){
+    this.router.navigate(['home'])
   }
-
-  Viajes(){
-    console.log("viajes")
-    this.router.navigate(['viajes'])
-  }
-
 
   async presentAlert() {
     const alert = await this.alerta.create({
@@ -117,19 +125,5 @@ export class PerfilesPage implements OnInit {
     await alert.present();
   }
 
-viaju(){
-    console.log("papure")
-    this.router.navigate(['viajes'])
-  };
-
-mapas(){
-    console.log("papure")
-    this.router.navigate(['mapa'])
-  };
-
-perfile(){
-    console.log("papure")
-    this.router.navigate(['/perfiles'])
-  };
 
 }

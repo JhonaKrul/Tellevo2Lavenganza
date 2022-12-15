@@ -46,8 +46,12 @@ export class DescargaPage implements OnInit {
     this.router.navigate(['info'])
   }
 
+  cuerre(){
+    console.log("uwu")
+    this.router.navigate(['qr'])
+  }
+
   cerrar(){
     this.router.navigate(['home'])
   }
-
 }

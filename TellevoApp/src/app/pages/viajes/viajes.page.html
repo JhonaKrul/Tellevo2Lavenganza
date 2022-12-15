@@ -31,39 +31,43 @@
           <ion-icon name="person-circle-outline"></ion-icon>
           <ion-label>Perfil</ion-label>
         </ion-item>
+        <ion-item (click)="mapas()">
+          <ion-icon name="map-outline"></ion-icon>
+          <ion-label>Mapa</ion-label>
+        </ion-item>
+        <ion-item (click)="viaju()">
+          <ion-icon name="time-outline"></ion-icon>
+          <ion-label>Historial</ion-label>
+        </ion-item>
         <ion-item (click)="presentAlert()">
-          <ion-icon name="id-card-outline"></ion-icon>
-          <ion-label>Agregar viaje</ion-label>
+          <ion-icon name="time-outline"></ion-icon>
+          <ion-label>Agregar Viaje</ion-label>
+        </ion-item>
+        <ion-item (click)="info()">
+          <ion-icon name="information-circle-outline"></ion-icon>
+          <ion-label>Quienes somos</ion-label>
           </ion-item>
-          <ion-item (click)="mapas()">
-            <ion-icon name="map-outline"></ion-icon>
-            <ion-label>Mapa</ion-label>
-          </ion-item>
-          <ion-item (click)="viaju()">
-            <ion-icon name="time-outline"></ion-icon>
-            <ion-label>Historial</ion-label>
-          </ion-item>
-          <ion-item (click)="info()">
-            <ion-icon name="information-circle-outline"></ion-icon>
-            <ion-label>Quienes somos</ion-label>
-            </ion-item>
-          <ion-item (click)="cerrar()">
-            <ion-icon name="log-out-outline" slot="start"></ion-icon>
-            <ion-label>Cerrar sesion</ion-label>
-          </ion-item>
-          <ion-item (click)="api()">
-            <ion-icon name="radio-outline"></ion-icon>
-            <ion-label>API</ion-label>
-          </ion-item>
-          <ion-item (click)="descarga()">
-            <ion-icon name="cloud-download-outline"></ion-icon>
-            <ion-label>Descarga</ion-label>
-          </ion-item>
-        </ion-list>
-      </ion-content>
-      </ion-menu>
-      
-      <ion-router-outlet id="main"></ion-router-outlet>
+        <ion-item (click)="cerrar()">
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
+          <ion-label>Cerrar sesion</ion-label>
+        </ion-item>
+        <ion-item (click)="api()">
+          <ion-icon name="radio-outline"></ion-icon>
+          <ion-label>API</ion-label>
+        </ion-item>
+        <ion-item (click)="cuerre()">
+          <ion-icon name="barcode"></ion-icon>
+          <ion-label>Escanear QR</ion-label>
+        </ion-item>
+        <ion-item (click)="descarga()">
+          <ion-icon name="cloud-download-outline"></ion-icon>
+          <ion-label>Descarga</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+    </ion-menu>
+    
+    <ion-router-outlet id="main"></ion-router-outlet>
   
 
 
@@ -90,7 +94,7 @@
             <ion-card-subtitle>Origen: {{ aux.origen }} <br> Destino: {{ aux.destino }}</ion-card-subtitle>
             
           </ion-card-header>
-          <img src="https://krify.co/wp-content/uploads/2018/09/Navigation.gif" alt="">
+          <img src="https://www.kotaku.com.au/wp-content/uploads/sites/3/2018/03/10/xgoplsgk3jpmtewvhycz.gif" alt="">
           <ion-card-content>
             Vehiculo: {{ aux.vehiculo }}
             <br>
@@ -100,9 +104,47 @@
             <br>
             Pasajeros: {{ aux.pasajeros }}
             <br>
-            <img src="https://www.edelices.com/skin/frontend/rwd/rwd18/images/media/home/edelices-avis-note.jpg" alt="">
+
           </ion-card-content>
-          
+            <ion-accordion-group>
+              <ion-accordion value="first">
+                <ion-item slot="header" color="light">
+                  <ion-label><ion-icon name="star-outline"color="warning"></ion-icon> Valoracion Al Conductor 1/5 <ion-icon name="star-outline"color="warning"></ion-icon></ion-label>
+                </ion-item>
+                <div class="ion-padding" slot="content">
+            
+                    <!-- Checkbox Colors -->
+                    <ul><li>
+                      <ion-checkbox color="primary" checked="false"></ion-checkbox>
+                      <ion-icon name="star-outline" color="warning"></ion-icon>
+                    </li></ul>
+                    <ul><li>
+                      <ion-checkbox color="secondary" checked="false"></ion-checkbox>
+                      <ion-icon name="star-outline"color="warning"></ion-icon><ion-icon name="star-outline"color="warning"></ion-icon>
+                    </li></ul>
+                    <ul><li>
+                      <ion-checkbox color="dark" checked="false"></ion-checkbox>
+                      <ion-icon name="star-outline"color="warning"></ion-icon><ion-icon name="star-outline"color="warning"></ion-icon><ion-icon name="star-outline"color="warning"></ion-icon>
+                    </li></ul>
+                    <ul><li>
+                      <ion-checkbox color="danger" checked="false"></ion-checkbox>
+                      <ion-icon name="star-outline"color="warning"></ion-icon><ion-icon name="star-outline"color="warning"></ion-icon><ion-icon name="star-outline"color="warning"></ion-icon><ion-icon name="star-outline"color="warning"></ion-icon>
+                    </li></ul>
+                    <ul><li>
+                      <ion-checkbox color="primary" checked="true"></ion-checkbox>
+                      <ion-icon name="star-outline"color="warning"></ion-icon><ion-icon name="star-outline"color="warning"></ion-icon><ion-icon name="star-outline"color="warning"></ion-icon><ion-icon name="star-outline"color="warning"></ion-icon><ion-icon name="star-outline"color="warning"></ion-icon>
+                    </li></ul>
+                  </div>
+              </ion-accordion>
+              <ion-accordion value="second">
+                <ion-item slot="header" color="light">
+                  <ion-label><ion-icon name="star-outline"color="warning"></ion-icon> Dejar Comentario <ion-icon name="star-outline"color="warning"></ion-icon></ion-label>    </ion-item>
+                <div class="ion-padding" slot="content">
+                  <ion-textarea placeholder="Comenta Aqui"></ion-textarea>
+                </div>
+              </ion-accordion>
+            </ion-accordion-group>
+
           <ion-button color="success"><ion-icon slot="start" name="add-circle-outline" ></ion-icon>Entrar como pasajero</ion-button> 
           <ion-button color="danger" (click)="eliminar(aux.id)" >
             eliminar
